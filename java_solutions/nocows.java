@@ -17,10 +17,10 @@ public class nocows {
 		
 		int[][] dp = new int[k+1][n+1];
 		
-		//base case
+		// base case
 		for (int i=1; i<=k; i++) dp[i][1] = 1; 
 		
-		//recursive case
+		// recursive case
 		for (int i=1; i<=k; i++){
 			for (int j=3; j<=n; j+=2){
 				for (int m=1; m<=j-1; m+=2){

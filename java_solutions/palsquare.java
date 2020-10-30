@@ -26,17 +26,20 @@ public class palsquare {
 		}
 		out.close();
 	}
+  
+  // Converts any int number to the specified base
 	public static String toBase(int i, int base, char[] rep){
-		//converts any int number to the specified base
-		if (i==1) return "1";
-		else if (i==0){
+		if (i == 1) {
+      return "1";
+    } else if (i==0){
 			return "";
 		} else {
 			return toBase(i/base, base, rep) + rep[i%base];
 		}
 	}
+
+  // Returns whether or not a string is a palindrome
 	public static boolean isPalindrome(String str){
-		//returns whether a string is a palindrome
 		Stack<Character> stack = new Stack<>();
 		for (int i=0; i<str.length(); i++){
 			stack.push(str.charAt(i));

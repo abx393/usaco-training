@@ -38,7 +38,7 @@ public class hamming {
 		out.close();
 	}
 	
-	//returns hamming distance
+	// Returns hamming distance
 	public static int dist(int i, int j){
 		int res = 0;
 		for (int k=0; k<b; k++){
