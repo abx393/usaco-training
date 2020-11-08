@@ -26,7 +26,7 @@ public class namenum {
 		String words = "";
 		while (wordSc.hasNext()){
 			String word = wordSc.next();
-			if (word.length()==num.length()) 
+			if (word.length() == num.length()) 
 				words += word  + "\n";
 		}
 		wordSc.close();
@@ -36,7 +36,7 @@ public class namenum {
 		ArrayList<String> result = new ArrayList<>();
 		char[] inds = num.toCharArray();
 		int[] indices = new int[inds.length];
-		for (int i=0; i<indices.length; i++){
+		for (int i = 0; i < indices.length; i++){
 			indices[i] = Character.getNumericValue(inds[i]);
 		}
 				
@@ -46,15 +46,15 @@ public class namenum {
 		find(charIndex, numIndex, indices, word, dict, result);
 		
 		PrintWriter out = new PrintWriter(new File("namenum.out"));
-		for (String s: result){
+		for (String s : result){
 			System.out.println(s);
 		}
 		out.close();
 	}
 	public static void find(int charIndex, int numIndex, int[] indices, 
-			String word, String[] dict, ArrayList<String> result){
-		if (word.length()==indices.length){
-			if (Arrays.binarySearch(dict,  word)>=0) 
+                          String word, String[] dict, ArrayList<String> result) {
+		if (word.length() == indices.length) {
+			if (Arrays.binarySearch(dict, word) >= 0) 
 				result.add(word);
 		} else {
 			System.out.println(Arrays.toString(indices));
@@ -63,13 +63,12 @@ public class namenum {
 			System.out.println();
 			word += map[indices[numIndex]][charIndex];
 			find(charIndex, numIndex, indices, word, dict, result);
-			word = word.substring(0,word.length()-1);
-			if (charIndex<2) find(charIndex+1, numIndex, indices, word, dict, result);
-			word = word.substring(0,word.length()-1);
-			if (numIndex<indices.length-1) find(charIndex, numIndex+1, indices, word, dict, result);
-			word = word.substring(0,word.length()-1);
+			word = word.substring(0, word.length() - 1);
+			if (charIndex < 2) find(charIndex + 1, numIndex, indices, word, dict, result);
+			word = word.substring(0, word.length() - 1);
+			if (numIndex < indices.length - 1) find(charIndex, numIndex + 1, indices, word, dict, result);
+			word = word.substring(0, word.length() - 1);
 		}
-		
 		
 	}
 	
