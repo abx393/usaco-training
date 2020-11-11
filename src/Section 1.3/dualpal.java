@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class dualpal {
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(new File("dualpal.in"));
 		final int N = sc.nextInt();
 		final int S = sc.nextInt();
@@ -18,7 +18,7 @@ public class dualpal {
 
 		int j = 0;
 		int  count2 = 0;
-		while (count2 < N){
+		while (count2 < N) {
 			int num = S + 1 + j;
 			int count = 0;
 			for (int i = 2; i <= 10; i++) {
@@ -35,7 +35,7 @@ public class dualpal {
 	}
 	
   // Converts any int number to the specified base
-	public static String toBase(int i, int base){
+	public static String toBase(int i, int base) {
 		if (i == 1) {
       return "1";
     } else if (i == 0) {
@@ -46,13 +46,14 @@ public class dualpal {
 	}
 	
   // Returns whether a string is a palindrome
-	public static boolean isPalindrome(String str){
+	public static boolean isPalindrome(String str) {
 		Stack<Character> stack = new Stack<>();
-		for (int i = 0; i < str.length(); i++){
+		for (int i = 0; i < str.length(); i++) {
 			stack.push(str.charAt(i));
 		}
+
 		String reverse = "";
-		while (!stack.isEmpty()){
+		while (!stack.isEmpty()) {
 			reverse += stack.pop();
 		}
 		if (reverse.equals(str)) return true;

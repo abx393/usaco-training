@@ -31,7 +31,6 @@ public class namenum {
 		}
 		wordSc.close();
 		String[] dict = words.split("\n");
-		//System.out.println(Arrays.toString(dict));
 		
 		ArrayList<String> result = new ArrayList<>();
 		char[] inds = num.toCharArray();
@@ -51,6 +50,7 @@ public class namenum {
 		}
 		out.close();
 	}
+
 	public static void find(int charIndex, int numIndex, int[] indices, 
                           String word, String[] dict, ArrayList<String> result) {
 		if (word.length() == indices.length) {

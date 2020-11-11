@@ -18,7 +18,7 @@ public class palsquare {
                 'A','B','C','D','E','F','G','H','I','J'};
         
 		PrintWriter out = new PrintWriter(new File("palsquare.out"));
-		for (int i=1; i<=300; i++){
+		for (int i = 1; i <= 300; i++) {
 			String square = toBase(i*i, base, rep);
 			if( isPalindrome( square ) ){
 				out.println(toBase(i, base, rep) + " " + square);
@@ -31,24 +31,23 @@ public class palsquare {
 	public static String toBase(int i, int base, char[] rep){
 		if (i == 1) {
       return "1";
-    } else if (i==0){
+    } else if (i == 0) {
 			return "";
 		} else {
-			return toBase(i/base, base, rep) + rep[i%base];
+			return toBase(i / base, base, rep) + rep[i % base];
 		}
 	}
 
   // Returns whether or not a string is a palindrome
 	public static boolean isPalindrome(String str){
 		Stack<Character> stack = new Stack<>();
-		for (int i=0; i<str.length(); i++){
+		for (int i = 0; i < str.length(); i++) {
 			stack.push(str.charAt(i));
 		}
 		String reverse = "";
-		while (!stack.isEmpty()){
+		while (!stack.isEmpty()) {
 			reverse += stack.pop();
 		}
-		if (reverse.equals(str)) return true;
-		return false;
+		return reverse.equals(str); 
 	}
 }
