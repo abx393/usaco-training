@@ -26,7 +26,7 @@ public class money {
 			for (int j=0; j<=n; j++){
 				numWays[i][j] += numWays[i-1][j];
 				int k=1;
-				while (j>=k*coins[i]){
+				while (j >= k * coins[i]){
 					numWays[i][j] += numWays[i-1][j-k*coins[i]];
 					k++;
 				}

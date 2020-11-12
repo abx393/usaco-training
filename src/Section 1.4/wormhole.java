@@ -64,8 +64,8 @@ public class wormhole {
 		if (i>n) {
 			if (cycleExists()) count++;
 		} else if (partner[i]!=0) {
-      pair(i+1);
-    } else {
+          pair(i+1);
+        } else {
 			for (int j=i+1; j<=n; j++){
 				if (partner[j]==0){
 					partner[i] = j;

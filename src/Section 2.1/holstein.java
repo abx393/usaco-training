@@ -8,6 +8,13 @@ import java.io.*;
 import java.util.*;
 
 public class holstein {
+	static int[] min;
+	static int[][] scoop;
+	static int V,G;
+	
+	static boolean[] best;
+	static int bestC;
+
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(new File("holstein.in"));
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("holstein.out")));
@@ -26,7 +33,7 @@ public class holstein {
 		best = null;
 		bestC = Integer.MAX_VALUE;
 		
-		recur(0,new boolean[G],0,new int[V]);
+		recur(0, new boolean[G], 0, new int[V]);
 		
 		ArrayList<Integer> ans = new ArrayList<Integer>();
 		for(int i = 0; i < G;i++) {
@@ -34,53 +41,42 @@ public class holstein {
 		}
 		Collections.sort(ans);
 		out.print(ans.size());
-		for(int a: ans)
-			out.print(" "+a);
+		for(int a : ans)
+			out.print(" " + a);
 		out.println();
-		
 		out.close();
 	}
-	static int[] min;
-	static int[][] scoop;
-	static int V,G;
 	
-	static boolean[] best;
-	static int bestC;
-	
-	public static void recur(int at, boolean[] used,int count,int[] vit)
-	{
-		if(at == used.length)
-		{
-			for(int i = 0; i < V;i++)
-			{
+	public static void recur(int at, boolean[] used,int count,int[] vit) {
+		if(at == used.length) {
+			for(int i = 0; i < V; i++) {
 				if(vit[i] < min[i]) return;
 			}
-			if(better(count,used))
-			{
+			if(better(count, used)) {
 				bestC = count;
 				best = used.clone();
 			}
 			return;
 		}
-		recur(at+1,used,count,vit);
+		recur(at + 1, used, count, vit);
 		
-		for(int i = 0; i < V;i++){
+		for(int i = 0; i < V;i++) {
 			vit[i] += scoop[at][i];
 		}
+
 		used[at] = true;
-		recur(at+1,used,count+1,vit);
-		for(int i = 0; i < V;i++){
+		recur(at + 1, used, count + 1, vit);
+		for(int i = 0; i < V;i++) {
 			vit[i] -= scoop[at][i];
 		}
 		used[at] = false;
 	}
-	public static boolean better(int count, boolean[] used)
-	{
+
+	public static boolean better(int count, boolean[] used) {
 		if(count < bestC) return true;
 		if(count > bestC) return false;
 		
-		for(int i = 0; i < G;i++)
-		{
+		for(int i = 0; i < G; i++) {
 			if(used[i] && !best[i]) return true;
 			if(!used[i] && best[i]) return false;
 		}

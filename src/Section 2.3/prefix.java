@@ -9,13 +9,12 @@ import java.util.*;
 
 public class prefix {
 	public static void main(String[] args) throws IOException {
-		long startTime = System.currentTimeMillis();
 		//TreeSet<String> ts = new TreeSet<String>();
 		ArrayList<String> primitives = new ArrayList<String>();
 		BufferedReader br = new BufferedReader(new FileReader("prefix.in"));
 		String line = br.readLine();
 		StringTokenizer st;
-		while (!line.equals(".")){
+		while (!line.equals(".")) {
 			st = new StringTokenizer(line);
 			while (st.hasMoreTokens()) primitives.add(st.nextToken());
 			line = br.readLine();
@@ -24,12 +23,12 @@ public class prefix {
 		
 		while (true) {
 			line = br.readLine();
-			if (line==null) break;
+			if (line == null) break;
 			sb.append(line);
 		}
 		String seq = sb.toString();
 		br.close();
-		boolean[] reachable = new boolean[seq.length()+1];
+		boolean[] reachable = new boolean[seq.length() + 1];
 		//ArrayList<String> primitives = new ArrayList<String>(ts);
 		System.out.println(primitives);
 		System.out.println(seq);
@@ -37,12 +36,12 @@ public class prefix {
 		
 		reachable[0] = true;
 		int ans = 0;
-		for (int i=0; i<seq.length(); i++){
+		for (int i = 0; i < seq.length(); i++){
 			if (!reachable[i]) continue;
-			for (int len=1; len<=10; len++) {
-				if (i+len<=seq.length() && Collections.binarySearch(primitives, seq.substring(i, i + len)) >= 0) {
+			for (int len = 1; len <= 10; len++) {
+				if (i + len <= seq.length() && Collections.binarySearch(primitives, seq.substring(i, i + len)) >= 0) {
 					reachable[i+len] = true;
-					ans = i+len;
+					ans = i + len;
 				} 
 			}
 		}
@@ -50,9 +49,5 @@ public class prefix {
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("prefix.out")));
 		out.println(ans);
 		out.close();
-		long endTime   = System.currentTimeMillis();
-		long totalTime = endTime - startTime;
-		System.out.println(totalTime/Math.pow(10, 3) + "s");
-		
 	}
 }
