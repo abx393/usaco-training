@@ -17,7 +17,7 @@ public class concom {
 		
 		LinkedList<int[]> q = new LinkedList<int[]>();
 		StringTokenizer st;
-		for (int i=0; i<n; i++){
+		for (int i=0; i<n; i++) {
 			st = new StringTokenizer(br.readLine());
 			int c1 = Integer.parseInt(st.nextToken());
 			int c2 = Integer.parseInt(st.nextToken());
@@ -42,8 +42,8 @@ public class concom {
 		}
 		
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("concom.out")));
-		for (int i=0; i<100; i++){
-			for (int j=0; j<100; j++){
+		for (int i=0; i<100; i++) {
+			for (int j=0; j<100; j++) {
 				if (control[i][j] && i != j) {
 					out.println((i+1) + " " + (j+1));
 				}

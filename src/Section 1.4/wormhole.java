@@ -64,10 +64,10 @@ public class wormhole {
 		if (i>n) {
 			if (cycleExists()) count++;
 		} else if (partner[i]!=0) {
-          pair(i+1);
+            pair(i+1);
         } else {
-			for (int j=i+1; j<=n; j++){
-				if (partner[j]==0){
+			for (int j=i+1; j<=n; j++) {
+				if (partner[j] == 0) {
 					partner[i] = j;
 					partner[j] = i;
 					pair(i+1);
@@ -81,7 +81,7 @@ public class wormhole {
 	public static boolean cycleExists() {
 		for (int i=1; i<=n; i++) {
 			int pos = i;
-			for (int j=0; j<n; j++){
+			for (int j=0; j<n; j++) {
 				pos = nextOnRight[partner[pos]];
 				if (pos == i) return true;
 			}

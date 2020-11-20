@@ -15,7 +15,7 @@ public class ttwo{
 		int f1=0, f2=0, fdir=0, c1=0, c2=0, cdir=0;
 		for (int i=0; i<10; i++){
 			String s = sc.next();//br.readLine();
-			for (int j=0; j<10; j++){
+			for (int j=0; j<10; j++) {
 				if (s.charAt(j)=='*') {
 					obs[i][j] = true;
 				} else if (s.charAt(j)=='F') {
@@ -37,8 +37,8 @@ public class ttwo{
 		
 		ArrayList<Integer>[][] timef = new ArrayList[10][10];
 		ArrayList<Integer>[][] timec = new ArrayList[10][10];
-		for (int i=0; i<10; i++){
-			for (int j=0; j<10; j++){
+		for (int i=0; i<10; i++) {
+			for (int j=0; j<10; j++) {
 				timef[i][j] = new ArrayList<Integer>();
 				timec[i][j] = new ArrayList<Integer>();
 			}
@@ -52,19 +52,19 @@ public class ttwo{
 			//System.out.println(counter);
 			counter++;
 			switch (fdir){
-				case 0: //north
+				case 0: // north
 					if (f1>0 && !obs[f1-1][f2]) f1--;
 					else fdir = 1;
 					break;
-				case 1: //east
+				case 1: // east
 					if (f2<9 && !obs[f1][f2+1]) f2++;
 					else fdir = 2;
 					break;
-				case 2: //south
+				case 2: // south
 					if (f1<9 && !obs[f1+1][f2]) f1++;
 					else fdir = 3;
 					break;
-				case 3: //west
+				case 3: // west
 					if (f2>0 && !obs[f1][f2-1]) f2--;
 					else fdir = 0;
 					break;
@@ -80,19 +80,19 @@ public class ttwo{
 			timec[c1][c2].add(counter);
 			counter++;
 			switch (cdir){
-				case 0: //north
+				case 0: // north
 					if (c1>0 && !obs[c1-1][c2]) c1--;
 					else cdir = 1;
 					break;
-				case 1: //east
+				case 1: // east
 					if (c2<9 && !obs[c1][c2+1]) c2++;
 					else cdir = 2;
 					break;
-				case 2: //south
+				case 2: // south
 					if (c1<9 && !obs[c1+1][c2]) c1++;
 					else cdir = 3;
 					break;
-				case 3: //west
+				case 3: // west
 					if (c2>0 && !obs[c1][c2-1]) c2--;
 					else cdir = 0;
 					break;
@@ -101,24 +101,24 @@ public class ttwo{
 		
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("ttwo.out")));
 		int min = Integer.MAX_VALUE;
-		for (int i=0; i<10; i++){
-			for (int j=0; j<10; j++){
-				for (int f: timef[i][j]){
-					for (int c: timec[i][j]){
-						if (f==c) {
-							//System.out.println("check");
+		for (int i=0; i<10; i++) {
+			for (int j=0; j<10; j++) {
+				for (int f: timef[i][j]) {
+					for (int c: timec[i][j]) {
+						if (f == c) {
 							min = Math.min(min, f);
 						}
 					}
 				}
 			}
 		}
-		if (min==Integer.MAX_VALUE) {
+
+		if (min == Integer.MAX_VALUE) {
 			out.println(0);
-		}
-		else out.println(min);
+		} else {
+            out.println(min);
+        }
 		
-		out.close();
 		out.close();
 	}
 }

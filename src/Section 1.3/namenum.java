@@ -52,10 +52,11 @@ public class namenum {
 	}
 
 	public static void find(int charIndex, int numIndex, int[] indices, 
-                          String word, String[] dict, ArrayList<String> result) {
+                            String word, String[] dict, ArrayList<String> result) {
 		if (word.length() == indices.length) {
-			if (Arrays.binarySearch(dict, word) >= 0) 
+			if (Arrays.binarySearch(dict, word) >= 0) {
 				result.add(word);
+            }
 		} else {
 			System.out.println(Arrays.toString(indices));
 			System.out.println(numIndex + "  " + charIndex);

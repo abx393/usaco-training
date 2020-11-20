@@ -13,6 +13,7 @@ public class cowtour2 {
 	public static int[] components;
 	public static ArrayList<ArrayList<Integer>> compList;
 	public static double[][] graph;
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("cowtour.in"));
 		n = Integer.parseInt(br.readLine());
@@ -23,20 +24,20 @@ public class cowtour2 {
 		compList = new ArrayList<ArrayList<Integer>>();
 		compList.add(new ArrayList<Integer>());
 		StringTokenizer st;
-		for (int i=0; i<n; i++){
+		for (int i=0; i<n; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j=0; j<2; j++) pos[i][j] = Integer.parseInt(st.nextToken());
 		}
-		for (int i=0; i<n; i++){
+		for (int i=0; i<n; i++) {
 			String s = br.readLine();
-			for (int j=0; j<n; j++){
-				if (s.charAt(j)=='1') graph[i][j] = graph[j][i] = dist(i, j);
+			for (int j=0; j<n; j++) {
+				if (s.charAt(j) == '1') graph[i][j] = graph[j][i] = dist(i, j);
 				else if (i!=j) graph[i][j] = graph[j][i] = Integer.MAX_VALUE;
 			}
 		}
 		int comp = 0;
 		for (int i=0; i<n; i++) {
-			if (components[i]>0) continue;
+			if (components[i] > 0) continue;
 			comp++;
 			dfs(i, comp);
 		}
@@ -139,13 +140,15 @@ public class cowtour2 {
 		out.printf("%.6f\n", res);
 		out.close();
 	}
-	//returns Euclidean distance
+
+	// Returns Euclidean distance
 	public static double dist(int i, int j){
 		int dx = Math.abs(pos[i][0]-pos[j][0]);
 		int dy = Math.abs(pos[i][1]-pos[j][1]);
 		return Math.sqrt(dx*dx + dy*dy);
 	}
-	//determines connected components
+
+	// Determines connected components
 	public static void dfs(int i, int comp) {
 		components[i] = comp;
 		if (compList.size()<comp+1) compList.add(new ArrayList<Integer>());
@@ -156,14 +159,16 @@ public class cowtour2 {
 		}
 		
 	}
+
 	public static void print(){
 		for (double[] i: graph) System.out.println(Arrays.toString(i));
 	}
-	//Floyd-Warshall Algorithm
+
+	// Floyd-Warshall Algorithm
 	public static void shortestPaths(){
-		for (int w=0; w<n; w++){ //intermediate vertex
-			for (int u=0; u<n; u++){
-				for (int v=0; v<n; v++){
+		for (int w=0; w<n; w++) { //intermediate vertex
+			for (int u=0; u<n; u++) {
+				for (int v=0; v<n; v++) {
 					graph[u][v] = Math.min(graph[u][v], graph[u][w]+graph[w][v]);
 				}
 			}

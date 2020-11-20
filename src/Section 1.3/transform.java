@@ -35,21 +35,21 @@ public class transform {
 		rotate90();
 		if (equal()) {
 			out.println(1); 
-      out.close();
+            out.close();
 			return; 
 		}
 
 		rotate90();
 		if (equal()){ 
 			out.println(2); 
-      out.close();
+            out.close();
 			return;
 		}
 
 		rotate90();
 		if (equal()) {
 			out.println(3); 
-      out.close();
+            out.close();
 			return;
 		}
 
@@ -57,14 +57,14 @@ public class transform {
 		reflect();
 		if (equal()) {
 			out.println(4); 
-      out.close();
+            out.close();
 			return;
 		}
 
 		char[][] temp = before;
 		if (checkCombo()) {
 			out.println(5); 
-      out.close();
+            out.close();
 			return;
 		}
 
@@ -72,7 +72,7 @@ public class transform {
 		reflect();
 		if (equal()) {
 			out.println(6); 
-      out.close();
+            out.close();
 			return;
 		}
 

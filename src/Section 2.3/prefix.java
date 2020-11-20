@@ -36,7 +36,7 @@ public class prefix {
 		
 		reachable[0] = true;
 		int ans = 0;
-		for (int i = 0; i < seq.length(); i++){
+		for (int i = 0; i < seq.length(); i++) {
 			if (!reachable[i]) continue;
 			for (int len = 1; len <= 10; len++) {
 				if (i + len <= seq.length() && Collections.binarySearch(primitives, seq.substring(i, i + len)) >= 0) {

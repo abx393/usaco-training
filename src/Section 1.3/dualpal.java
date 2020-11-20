@@ -34,9 +34,9 @@ public class dualpal {
 		out.close();
 	}
 	
-  // Converts any int number to the specified base
+    // Converts any int number to the specified base
 	public static String toBase(int i, int base) {
-		if (i == 1) {
+    if (i == 1) {
       return "1";
     } else if (i == 0) {
 			return "";
@@ -45,7 +45,7 @@ public class dualpal {
 		}
 	}
 	
-  // Returns whether a string is a palindrome
+    // Returns whether a string is a palindrome
 	public static boolean isPalindrome(String str) {
 		Stack<Character> stack = new Stack<>();
 		for (int i = 0; i < str.length(); i++) {
