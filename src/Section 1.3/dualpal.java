@@ -34,11 +34,11 @@ public class dualpal {
 		out.close();
 	}
 	
-    // Converts any int number to the specified base
+    // Converts any int number to the given base
 	public static String toBase(int i, int base) {
-    if (i == 1) {
-      return "1";
-    } else if (i == 0) {
+        if (i == 1) {
+            return "1";
+        } else if (i == 0) {
 			return "";
 		} else {
 			return toBase(i / base, base) + i % base;
