@@ -16,7 +16,7 @@ public class comehome {
 		boolean[] visited = new boolean[52];
 
 		StringTokenizer st;
-		for (int i=0; i<p; i++){
+		for (int i=0; i<p; i++) {
 			st = new StringTokenizer(br.readLine());
 			int[] node = new int[2];
 			for (int j=0; j<2; j++) {
@@ -25,7 +25,7 @@ public class comehome {
 				else node[j] -= 97;
 			}
 			adj[node[0]][node[1]] = adj[node[1]][node[0]] = 
-					Math.min(adj[node[0]][node[1]], Integer.parseInt(st.nextToken())); 
+                                    Math.min(adj[node[0]][node[1]], Integer.parseInt(st.nextToken())); 
 		}
 		br.close();
 		
@@ -41,7 +41,7 @@ public class comehome {
 			int vertex = 0;
 			long minDist = Integer.MAX_VALUE;
 			for (int i=0; i<dist.length; i++) {
-				if (!visited[i] && dist[i]<=minDist) {
+				if (!visited[i] && dist[i] <= minDist) {
 					minDist = dist[i];
 					vertex = i;
 				}

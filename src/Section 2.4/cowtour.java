@@ -93,9 +93,9 @@ public class cowtour2 {
 		}
 		*/
 		boolean[][] visited = new boolean[n+1][n+1];
-		for (int i=0; i<n; i++){
-			for (int j=0; j<n; j++){
-				if (graph[i][j]<Integer.MAX_VALUE) continue;
+		for (int i=0; i<n; i++) {
+			for (int j=0; j<n; j++) {
+				if (graph[i][j] < Integer.MAX_VALUE) continue;
 				//if (visited[components[i]][components[j]]) continue;
 				visited[components[i]][components[j]] = true;
 				double middleDist = dist(i, j);
@@ -103,30 +103,30 @@ public class cowtour2 {
 				//ArrayList<Integer> temp = compList.get(components[i]);
 				//temp.addAll(compList.get(components[j]));
 				
-				/*for (int x: compList.get(components[i])){
-					for (int y: compList.get(components[j])){
+				/*for (int x: compList.get(components[i])) {
+					for (int y: compList.get(components[j])) {
 						totalDist = graph[i][x] + middleDist+graph[j][y];
 						maxDist = Math.max(totalDist, maxDist);
 					}
 				}*/
-				for (int x: compList.get(components[i])){
-					for (int y: compList.get(components[i])){
+				for (int x : compList.get(components[i])) {
+					for (int y : compList.get(components[i])) {
 						totalDist = graph[x][y];
 						maxDist = Math.max(totalDist, maxDist);
 					}
 				}
 				
-				for (int x: compList.get(components[j])){
-					for (int y: compList.get(components[j])){
+				for (int x : compList.get(components[j])) {
+					for (int y : compList.get(components[j])) {
 						totalDist = graph[x][y];
 						maxDist = Math.max(totalDist, maxDist);
 					}
 				}
 				
-				for (int x=0; x<n; x++){
-					for (int y=0; y<n; y++){
-						if (graph[x][i]==Integer.MAX_VALUE || graph[j][y]==Integer.MAX_VALUE) continue;
-						totalDist = graph[x][i]+middleDist+graph[j][y];
+				for (int x=0; x<n; x++) {
+					for (int y=0; y<n; y++) {
+						if (graph[x][i] == Integer.MAX_VALUE || graph[j][y] == Integer.MAX_VALUE) continue;
+						totalDist = graph[x][i] + middleDist + graph[j][y];
 						maxDist = Math.max(totalDist, maxDist);
 					}
 				}
@@ -154,14 +154,18 @@ public class cowtour2 {
 		if (compList.size()<comp+1) compList.add(new ArrayList<Integer>());
 		compList.get(comp).add(i);
 		
-		for (int j=0; j<n; j++){
-			if (components[j]==0 && graph[i][j]<Integer.MAX_VALUE) dfs(j, comp);
+		for (int j=0; j<n; j++) {
+			if (components[j]==0 && graph[i][j] < Integer.MAX_VALUE) {
+                dfs(j, comp);
+            }
 		}
 		
 	}
 
 	public static void print(){
-		for (double[] i: graph) System.out.println(Arrays.toString(i));
+		for (double[] i: graph) {
+            System.out.println(Arrays.toString(i));
+        }
 	}
 
 	// Floyd-Warshall Algorithm

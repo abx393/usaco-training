@@ -13,11 +13,13 @@ public class agrinet {
 		int n = sc.nextInt();
 		int[][] graph = new int[n][n];
 		
-		for (int i = 0; i < n; i++){
-			for (int j = 0; j < n; j++) graph[i][j] = sc.nextInt();
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+                graph[i][j] = sc.nextInt();
+            }
 		}
-
 		sc.close();
+
 		int[] dist = new int[n];
 		int[] source = new int[n];
 		Arrays.fill(dist, Integer.MAX_VALUE);
@@ -27,14 +29,14 @@ public class agrinet {
 		int treesize = 1;
 		int treecost = 0;
 		intree[0] = true;
-		for (int i = 0; i < n; i++){
+		for (int i = 0; i < n; i++) {
 			if (graph[0][i] > 0) {
 				dist[i] = graph[0][i];
 				source[i] = 0;
 			}
 		}
 		
-		while (treesize < n){
+		while (treesize < n) {
 			int minDist = Integer.MAX_VALUE;
 			int minNode = 0;
 			for (int i = 0; i < n; i++) {

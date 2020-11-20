@@ -26,9 +26,9 @@ public class kimbits {
 		
 		long count = 0;
 		StringBuilder number = new StringBuilder("");
-		for (int j=0; j<n; j++) number.append("0");
-		for (long j=0; j<(long)Math.pow(2, n); j++){
-			if (ones<=len){
+		for (int j = 0; j < n; j++) number.append("0");
+		for (long j = 0; j < (long) Math.pow(2, n); j++) {
+			if (ones<=len) {
 				count++;
 			}
 			if (count==i) {
@@ -40,9 +40,10 @@ public class kimbits {
 		out.close();
 		System.out.println((System.nanoTime()-init)/100000 + " ns");
 	}
-	public static StringBuilder inc(StringBuilder s){
-		for (int i=0; i<s.length(); i++) {
-			if (s.charAt(i)=='0') {
+
+	public static StringBuilder inc(StringBuilder s) {
+		for (int i = 0; i <s.length(); i++) {
+			if (s.charAt(i) == '0') {
 				s.replace(i, i+1, "1");
 				ones++;
 				break;
