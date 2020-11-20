@@ -2,7 +2,7 @@
 Java solutions to problems on the USACO Training pages (https://train.usaco.org).
 
 ## Section 1.3
-- [dualpal](src/Section 1.3/dualpal.java)
+- [dualpal](src/Section/dualpal.java)
 - namenum
 - palsquare
 - transform
