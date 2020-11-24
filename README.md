@@ -48,6 +48,7 @@ Java solutions to problems on the USACO Training pages (https://train.usaco.org)
 
 ## Section 3.1
 - [agrinet](src/Section%203.1/agrinet.java)
+- [inflate](src/Section%203.1/inflate.java)
 
 ## Section 3.2
 - [fact4](src/Section%203.2/fact4.java)
