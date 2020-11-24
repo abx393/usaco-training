@@ -17,6 +17,7 @@ Java solutions to problems on the USACO Training pages (https://train.usaco.org)
 ## Section 1.4
 - [barn1](src/Section%201.4/barn1.java)
 - [crypt1](src/Section%201.4/crypt1.java)
+- [combo](src/Section%201.4/combo.java)
 - [skidesign](src/Section%201.4/skidesign.java)
 - [wormhole](src/Section%201.4/wormhole.java)
 
