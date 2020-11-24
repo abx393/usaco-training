@@ -1,6 +1,12 @@
 # usaco-training
 Java solutions to problems on the USACO Training pages (https://train.usaco.org).
 
+## Section 1.2
+- [ride] (src/Section%201.2/ride.java)
+- [gift1] (src/Section%201.2/gift1.java)
+- [friday] (src/Section%201.2/friday.java)
+- [beads] (src/Section%201.2/beads.java)
+
 ## Section 1.3
 - [dualpal](src/Section%201.3/dualpal.java)
 - [namenum](src/Section%201.3/namenum.java)
