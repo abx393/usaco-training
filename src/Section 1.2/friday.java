@@ -8,13 +8,13 @@ import java.util.*;
 import java.io.*;
 
 public class friday {
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(new File("friday.in"));
-		int yrs = sc.nextInt(); //get N (number of years) from the file
+		int yrs = sc.nextInt(); // get N (number of years) from the file
 		sc.close();
 		
-		int d=2; //day of the week
-		// initialized to Monday, January 1st, 1900
+		int d = 2; // day of the week
+		// Initialized to Monday, January 1st, 1900
 		int[] result = {0,0,0,0,0,0,0};
 		for (int year=1900; year<1900 +yrs; year++){
 			for (int mo=1; mo<=12; mo++){
@@ -38,24 +38,24 @@ public class friday {
 		//out.newLine();
 		out.close();
 	}
-	static int calcDays(int mo, int year){ 
-		//calculates the number of days in a particular month
-		if (year%100==0){
-			if (year%400==0) {
-				if (mo==2){
+
+    // Calculates the number of days in the given month
+	public static int calcDays(int mo, int year) {
+		if (year % 100 == 0) {
+			if (year % 400 == 0) {
+				if (mo == 2) {
 					return 29;
 				}
-			}
-			else {
-				if (mo==2) return 28;
+			} else if (mo == 2) {
+                return 28;
 			}
 		}
-		if (year%4==0){
-			if (mo==2){
+		if (year % 4 == 0) {
+			if (mo == 2) {
 				return 29;
 			}
 		}
-		switch (mo){
+		switch (mo) {
 			case 1: return 31;
 			case 2: return 28;
 			case 3: return 31; 
@@ -69,8 +69,6 @@ public class friday {
 			case 11: return 30;
 			case 12: return 31;
 			default: return 30;
-		
 		}
-		
 	}
 }
