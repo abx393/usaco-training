@@ -8,6 +8,7 @@ Java solutions to problems on the USACO Training pages (https://train.usaco.org)
 - [beads](src/Section%201.2/beads.java)
 
 ## Section 1.3
+- [milk2](src/Section%201.3/milk2.java)
 - [dualpal](src/Section%201.3/dualpal.java)
 - [namenum](src/Section%201.3/namenum.java)
 - [palsquare](src/Section%201.3/palsquare.java)
